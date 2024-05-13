@@ -1,0 +1,98 @@
+============================================================================
+*Function Components
+*JSX
+*Props
+============================================================================
+import React from 'react';
+
+export function App(){
+  return(
+    <MyPrint name="Jay"/>
+  )
+}
+
+function MyPrint(props){
+  return(
+    <h1> Hi {props.name} </h1>
+  )
+}
+````````````````````````````````````````````````````````````````````````````
+
+
+
+
+============================================================================
+*Class Components
+*State
+============================================================================
+import React, { Component } from "react";
+
+class Car extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { name: "Ford" };
+  }
+  
+  render() {
+    return <h1>My name is {this.state.name}</h1>;
+  }
+}
+
+
+export function App() {
+  return < Car />;
+}
+````````````````````````````````````````````````````````````````````````````
+
+
+
+
+
+============================================================================
+*Composition
+============================================================================
+import React from 'react';
+
+export function App(){
+  let x = 6;
+  let person = "Nayan";
+  if(x>5){
+    person = "Ram";  
+  }
+  return(
+    <Welcome userName={person}/>
+  )
+}
+
+function Welcome({userName}){
+  return(
+    <Print name={userName}/>
+  )
+}
+
+function Print({name}){
+  return (
+    <h1> Hi Mr. {name}</h1>
+  )
+}
+````````````````````````````````````````````````````````````````````````````
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
