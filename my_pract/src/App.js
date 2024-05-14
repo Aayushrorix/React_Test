@@ -1,9 +1,11 @@
 import './App.css';
 
+import Effect from './components/useeffect.tsx'
 import Event,{Event1} from './components/event.tsx'
 import Prop from './components/prop.tsx'
 import List from './components/list.tsx'
 import Ref from './components/ref.tsx';
+
 // code for useRef
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
       <Event/>
       <h3>====================================================</h3>
       <Event1/>
+      <h3>====================================================</h3>
+      <Effect/>
       <h3>====================================================</h3>
     </>
   );
