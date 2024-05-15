@@ -2,11 +2,24 @@ import logo from './logo.svg';
 import './App.css';
 import React,{useEffect ,useRef, useState} from 'react';
 import Todo from './components/todo'
+import ParentComponent from './components/callback'
+import ClickCounter from './components/ref'
+import ParentComponent1 from './components/memo' 
 
 
 function App(){
   return(
-    <Todo/>
+    <>
+      <h3>====================================================================</h3>
+      <Todo/>
+      <h3>====================================================================</h3>
+      <ParentComponent/>
+      <h3>====================================================================</h3>
+      <ClickCounter/>
+      <h3>====================================================================</h3>
+      <ParentComponent1/>
+      <h3>====================================================================</h3>
+    </>
   )
 }
 
