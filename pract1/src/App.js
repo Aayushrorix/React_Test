@@ -1,68 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import React,{useEffect ,useRef, useState} from 'react';
+import Todo from './components/todo'
 
 
 function App(){
-  const [tasks, setTask] = useState([])
-  let [id,setId] = useState(1)
-  const [description, setDescription] = useState('');
-  const [title, setTitle] = useState('');
-
-
-  function addTask(){
-    setTask([...tasks, { id: id, title: title, description: description }]);
-    setId(id+1)
-    setTitle('')
-    setDescription('')
-  }
-
-  function ShowTasks(props){
-    return <li> ID : {props.id}     Title : {props.title}     Description : {props.description} 
-    <button onClick={() => editTask(props.id, prompt('Enter new title'), prompt('Enter new description'))}>E</button> 
-    <button onClick={() => deleteTask(props.id)}>D</button></li>
-  }
-
-  function editTask(id, newTitle, newDescription) {
-    const updatedTasks = tasks.map(task =>
-      task.id === id ? { ...tasks, id:id ,title: newTitle, description: newDescription } : task
-    );
-    setTask(updatedTasks);
-  }
-
-  function deleteTask(id) {
-    const filteredTasks = tasks.filter(task => task.id !== id);
-    setTask(filteredTasks);
-  }
-
   return(
-    <div>
-
-      <div>
-        <label>Title : </label>
-        <input placeholder="title" value={title} onChange={(e) => setTitle(e.target.value)}/>
-      </div>
-
-      <div>
-        <label>Description : </label>
-        <input placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)}/>
-      </div>
-
-      <div>
-        <button onClick={addTask} disabled={!(title!=='' && description!=='')}>Add</button>
-      </div>
-
-      <hr/>
-      <div>
-        <h2> Transactions</h2>
-        <ul>
-          {tasks.map((task, index)=> (
-          <ShowTasks id={task.id} title={task.title} description={task.description}/>
-          ))}
-        </ul>
-      </div>
-
-    </div>
+    <Todo/>
   )
 }
 
