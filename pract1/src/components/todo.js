@@ -30,7 +30,7 @@ function Todo(){
         return <li><input 
         type="checkbox"
         /> 
-        ID : {props.id} | Title : {props.title} | Description : {props.description} <t/>
+        ID : {props.id} | Title : {props.title} | Description : {props.description}  
         <button onClick={() => {
         const newTitle = prompt('Enter new title', props.title);
         const newDescription = prompt('Enter new description', props.description);
@@ -39,7 +39,6 @@ function Todo(){
         <button onClick={() => deleteTask(props.id)}>D</button>
         <br/>
         </li>
-        
     }
 
     function deleteTask(id) {
