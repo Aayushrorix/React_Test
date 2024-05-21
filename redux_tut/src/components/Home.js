@@ -12,12 +12,12 @@ const Home = () => {
                     <img src="/Apple-iPhone-15-Pro-Max.jpg" alt="Apple-iPhone-15-Pro-Max"></img>
                 </div>
                 <div className="text-wrapper item">
-                    <span>
+                    <div>
                         iPhone 15 Pro Max
-                    </span>
-                    <span>
+                    </div>  
+                    <div>
                         Price: $1000.00
-                    </span>
+                    </div>
                 </div>
                 <div className="btn-wrapper item">
                     <button>Add to Cart</button>
