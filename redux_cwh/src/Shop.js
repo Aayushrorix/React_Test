@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actionCreators } from './state/index'
-import { depositeMoney, withdrawMoney } from './state/action-creators'
+// import { depositeMoney, withdrawMoney } from './state/action-creators'
 
 const Shop = () => {
     const dispatch = useDispatch();
