@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux"
+import { Link } from 'react-router-dom';
 const Header = () => {
 
     const cartCount = useSelector(state => state.cart.length)
@@ -6,21 +7,19 @@ const Header = () => {
     return(
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <h3 className="navbar-brand">1</h3>
-                <h3 className="navbar-brand">2</h3> 
-                <h3 className="navbar-brand">3</h3>
-                <a href="/about">
+                <Link to='/' className="navbar-brand">Amazon.in</Link>
+                <Link to="/cart">
                     <form className="add-to-cart">
                         <img src=".\shopping-cart.png" alt='IMG'/>
                         <span style={{
-                                backgroundColor:"red",
+                                backgroundColor:"orange",
                                 position: 'absolute',
                                 top: '10%',
                                 right: '20px',
                                 transform: 'translate(50%, -50%)'
                             }}>{cartCount}</span>
                     </form>
-                </a>
+                </Link>
             </nav>
         </div>
     )

@@ -1,28 +1,28 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { actionCreators } from '../state/index'
 
-const Body = () => {
+const Cart = () => {
     const dispatch = useDispatch();
     const {addItem,removeItem} = bindActionCreators(actionCreators, dispatch);
     // const cartCount = useSelector(state => state.cart.length)
     const cart = useSelector(state => state.cart)
     const items = useSelector(state => state.items)
+    let final_price = 0
 
-    // const items = {
-    //     i1: { name: "iPhone 15 Pro Max", imgPath: "/Apple-iPhone-15-Pro-Max.jpg", price: 130000 },
-    //     i2: { name: "Samsung S24 Ultra", imgPath: "/s24_ultra.jpg", price: 150000 }
-    // };
+    const itemcart = [...new Set(cart)]
+    for(let i of cart){
+        final_price = final_price + items[i].price
+    }
+    // setFinalPrice(price)
+    // console.log(cart)
+    // console.log(items)
 
-    // Create an array of item keys
-    const itemKeys = Object.keys(items);
-
-    // console.log(cartCount)
-    
-    return (
+    return(
         <>
-            {itemKeys.map(key => (
+            {itemcart.map(key => (
+                <>
                 <div key={key} className="cart-wrapper">
                     <div className="item">
                         <div className="img-wrapper">
@@ -35,14 +35,21 @@ const Body = () => {
                     <div className="item">
                         <h6>{items[key].price} ₹</h6>
                         <div>
-                            <button disabled={cart.includes(key)} onClick={()=>{addItem(key)}}> Add To Cart </button>
-                            <button disabled={!cart.includes(key)} onClick={()=>{removeItem(key)}}> Remove from Cart </button>
+                            <button  onClick={()=>{addItem(key)}}> + </button>
+                            <button  onClick={()=>{removeItem(key)}}> - </button>
                         </div>
                     </div>
+                    <span >Qty : {cart.filter(x=>x===key).length}</span><br/>
+                    <span >price : {cart.filter(x=>x===key).length * items[key].price}</span>
                 </div>
+                </>
             ))}
+            <hr/>
+            <div >Final Price : {final_price}</div>
         </>
-    );
+    )
+
+
 }
 
-export default Body
+export default Cart;
