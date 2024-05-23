@@ -49,7 +49,7 @@ const Add = () => {
             </div>
 
             <hr/>
-            <button onClick={()=>{addUser()}}> Add </button>
+            <button disabled={name==="" || email==="" || mobile==="" || dob===""} onClick={()=>{addUser()}}> Add </button>
             <button  ><Link to='/'>Cancle</Link></button>
 
 
