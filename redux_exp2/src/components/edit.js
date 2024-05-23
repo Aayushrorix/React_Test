@@ -50,8 +50,8 @@ const Edit = () => {
             </div>
 
             <hr/>          
-            <button style={{ backgroundColor:"#3464eb", color:"white"}} onClick={()=>{EditUser(userId,name, email, mobile, dob)}}> <Link style={{ textDecoration:"none",backgroundColor:"#3464eb", color:"white"}} to='/'>Save</Link> </button>
-            <button  ><Link style={{ textDecoration:"none"}} to='/'>Cancle</Link></button>
+            <button style={{ margin:"2px",backgroundColor:"#3464eb", color:"white"}} onClick={()=>{EditUser(userId,name, email, mobile, dob)}}> <Link style={{ textDecoration:"none",backgroundColor:"#3464eb", color:"white"}} to='/'>Save</Link> </button>
+            <button style={{ margin:"2px",backgroundColor:"#c3c4c0"}} ><Link style={{ textDecoration:"none",color:"black"}} to='/'>Cancle</Link></button>
         </div>
     )
 }

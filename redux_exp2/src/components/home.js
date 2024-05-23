@@ -38,8 +38,8 @@ function Home() {
                       <td style={{border:" 1px solid black"}}>{users[key].mobile}</td>
                       <td style={{border:" 1px solid black"}}>{users[key].dob}</td>
                       <td style={{border:" 1px solid black"}}>
-                        <button style={{backgroundColor:"#3464eb", color:"white"}} ><Link to={`/edit/${key}`} style={{ textDecoration:"none",backgroundColor:"#3464eb", color:"white"}}>Edit</Link></button>
-                        <button onClick={()=>{UserDelete(key,cc)}}>Delete</button>
+                        <button style={{margin:"2px",backgroundColor:"#3464eb", color:"white"}} ><Link to={`/edit/${key}`} style={{ textDecoration:"none",backgroundColor:"#3464eb", color:"white"}}>Edit</Link></button>
+                        <button style={{ margin:"2px",backgroundColor:"#ed1334", color:"white"}} onClick={()=>{UserDelete(key,cc)}}>Delete</button>
                       </td>
                   </tr>
                   

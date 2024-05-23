@@ -49,8 +49,8 @@ const Add = () => {
             </div>
 
             <hr/>
-            <button style={{backgroundColor:"#3464eb", color:"white"}} disabled={name==="" || email==="" || mobile==="" || dob===""} onClick={()=>{addUser()}}> Add </button>
-            <button  ><Link  style={{ textDecoration:"none"}} to='/'>Cancle</Link></button>
+            <button style={{margin:"2px",backgroundColor:"#3464eb", color:"white"}} disabled={name==="" || email==="" || mobile==="" || dob===""} onClick={()=>{addUser()}}> Add </button>
+            <button style={{margin:"2px",backgroundColor:"#c3c4c0"}} ><Link  style={{ textDecoration:"none",color:"black"}} to='/'>Cancle</Link></button>
 
 
             
