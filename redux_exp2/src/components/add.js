@@ -29,28 +29,28 @@ const Add = () => {
     return (
         <div>
             <div>
-                <label>Name : </label>
+                <label>Name : </label><span style={{color:"red"}}>*</span>
                 <input placeholder='Name' value={name} onChange={(e) => setName(e.target.value)}/>
             </div>
 
             <div>
-                <label>Email : </label>
+                <label>Email : </label><span style={{color:"red"}}>*</span>
                 <input placeholder='exp@gmail.com' value={email} onChange={(e) => setEmail(e.target.value)}/>
             </div>
 
             <div>
-                <label>Mobile : </label>
+                <label>Mobile : </label><span style={{color:"red"}}>*</span>
                 <input placeholder='1234567890' value={mobile} onChange={(e) => setMobile(e.target.value)}/>
             </div>
 
             <div>
-                <label>DOB : </label>
+                <label>DOB : </label><span style={{color:"red"}}>*</span>
                 <input placeholder='00/00/0000' value={dob} onChange={(e) => setDob(e.target.value)}/>
             </div>
 
             <hr/>
-            <button disabled={name==="" || email==="" || mobile==="" || dob===""} onClick={()=>{addUser()}}> Add </button>
-            <button  ><Link to='/'>Cancle</Link></button>
+            <button style={{backgroundColor:"#3464eb", color:"white"}} disabled={name==="" || email==="" || mobile==="" || dob===""} onClick={()=>{addUser()}}> Add </button>
+            <button  ><Link  style={{ textDecoration:"none"}} to='/'>Cancle</Link></button>
 
 
             

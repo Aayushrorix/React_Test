@@ -38,7 +38,7 @@ function Home() {
                       <td style={{border:" 1px solid black"}}>{users[key].mobile}</td>
                       <td style={{border:" 1px solid black"}}>{users[key].dob}</td>
                       <td style={{border:" 1px solid black"}}>
-                        <button  ><Link to={`/edit/${key}`}>Edit</Link></button>
+                        <button style={{backgroundColor:"#3464eb", color:"white"}} ><Link to={`/edit/${key}`} style={{ textDecoration:"none",backgroundColor:"#3464eb", color:"white"}}>Edit</Link></button>
                         <button onClick={()=>{UserDelete(key,cc)}}>Delete</button>
                       </td>
                   </tr>
