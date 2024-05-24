@@ -37,41 +37,57 @@ const Form = ({type}) => {
     }
 
     return (
-        <>
-            <div>
-                <label>Name : </label><span style={{color:"red"}}>*</span>
-                <input type="text" placeholder='Your Name' value={name} onChange={(e) => setName(e.target.value)}/>
+        <div style={{margin:"00px 350px"}}>
+            
+
+        
+        <form style={{border:"1px solid black"}}>
+            {type === "add" ? (
+            <h1 style={{margin:"15px"}}>Add</h1>
+            ) : (
+                <h1 style={{margin:"15px"}}>Edit</h1>
+            )}
+
+            {/* <hr/> */}
+            <div  style={{margin:"20px 100px"}}>
+                <label  style={{float:"left",marginBottom:"3px"}}>Name : </label><span style={{color:"red",float:"left"}}>*</span>
+                <input type="text" className="form-control" placeholder='Your Name' value={name} onChange={(e) => setName(e.target.value)}/>
             </div>
 
-            <div>
-                <label>Email : </label><span style={{color:"red"}}>*</span>
-                <input type="email" placeholder='exp@gmail.com' value={email} onChange={(e) => setEmail(e.target.value)}/>
+            <div  style={{margin:"20px 100px",marginBottom:"8px"}}>
+                <label style={{float:"left"}}>Email : </label><span style={{color:"red",float:"left"}}>*</span>
+                <input type="email" className="form-control" placeholder='exp@gmail.com' value={email} onChange={(e) => setEmail(e.target.value)}/>
             </div>
 
-            <div>
-                <label>Mobile : </label><span style={{color:"red"}}>*</span>
-                <input type="number" placeholder="1234567890" value={mobile} onChange={(e) => setMobile(e.target.value)}/>
+            <div  style={{margin:"20px 100px",marginBottom:"8px"}}>
+                <label style={{float:"left"}}>Mobile : </label><span style={{color:"red",float:"left"}}>*</span>
+                <input type="number"  maxLength={10} className="form-control" placeholder="1234567890" value={mobile} onChange={(e) => {
+                    if (/^\d{0,10}$/.test( e.target.value)) {
+                        setMobile(e.target.value);
+                    }
+                }}/>
             </div>
 
-            <div>
-                <label>DOB : </label><span style={{color:"red"}}>*</span>
-                <input type="date" value={dob} onChange={(e) => setDob(e.target.value)}/>
+            <div  style={{margin:"20px 100px",marginBottom:"8px"}}>
+                <label style={{float:"left"}}>DOB : </label><span style={{color:"red",float:"left"}}>*</span>
+                <input type="date" className="form-control" value={dob} onChange={(e) => setDob(e.target.value)}/>
             </div>
 
-            <hr/>
+            {/* <hr/> */}
 
             {type === "add" ? (
-                <>
-                    <button style={{margin:"2px",padding: "0px 30px",border:"none",backgroundColor:"#3464eb", color:"white"}} disabled={name==="" || email==="" || mobile==="" || dob===""} onClick={addUser}> Add </button>
-                    <button style={{margin:"2px",border:"none",backgroundColor:"#c3c4c0"}} ><Link  style={{ padding: "0px 30px",textDecoration:"none",color:"black"}} to='/'>Cancle</Link></button>
-                </>
+                <div style={{margin:"30px"}}>
+                    <button style={{margin:"2px",padding: "2px 35px",border:"none",backgroundColor:"#3464eb", color:"white"}} disabled={name==="" || email==="" || mobile==="" || dob===""} onClick={addUser}> Add </button>
+                    <button style={{margin:"2px",padding: "2px",border:"none",backgroundColor:"#c3c4c0"}} ><Link  style={{ padding: "0px 30px",textDecoration:"none",color:"black"}} to='/'>Cancle</Link></button>
+                </div>
                 ) : (
-                <>
-                    <button style={{ margin:"2px",border:"none",backgroundColor:"#3464eb", color:"white"}} disabled={name==="" || email==="" || mobile==="" || dob===""} onClick={()=>{EditUser(userId,name, email, mobile, dob)}}> <Link style={{ padding: "0px 30px",textDecoration:"none",backgroundColor:"#3464eb", color:"white"}} to='/'>Save</Link> </button>
-                    <button style={{ margin:"2px",border:"none",backgroundColor:"#c3c4c0"}} ><Link style={{padding: "0px 30px", textDecoration:"none",color:"black"}} to='/'>Cancle</Link></button>
-                </>
+                <div style={{margin:"30px"}}>
+                    <button style={{ margin:"2px",padding:"3px",border:"none",backgroundColor:"#3464eb", color:"white"}} disabled={name==="" || email==="" || mobile==="" || dob===""} onClick={()=>{EditUser(userId,name, email, mobile, dob)}}> <Link style={{ padding: "0px 30px",textDecoration:"none",backgroundColor:"#3464eb", color:"white"}} to='/'>Save</Link> </button>
+                    <button style={{ margin:"2px",padding:"3px",border:"none",backgroundColor:"#c3c4c0"}} ><Link style={{padding: "0px 30px", textDecoration:"none",color:"black"}} to='/'>Cancle</Link></button>
+                </div>
                 )}
-        </>
+        </form>
+        </div>
     )
 }
 
