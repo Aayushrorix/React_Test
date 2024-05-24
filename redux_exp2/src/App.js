@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Router>
-        <div className="App" style={{alignItems:"center"}}>
+        <div style={{alignItems:"center"}}>
           <Header />
           <Routes>
             <Route path="/" Component={Home}/>
