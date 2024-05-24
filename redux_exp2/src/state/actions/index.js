@@ -35,12 +35,3 @@ export const countIncrement = (cc) => {
         })
     };
 }
-
-export const countDecrement = (cc) => {
-    return (dispatch)=>{
-        dispatch({
-            type:"ccdecr",
-            payload:cc
-        })
-    };
-}

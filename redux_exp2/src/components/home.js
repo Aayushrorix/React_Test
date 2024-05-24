@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 
 function Home() {
   const dispatch = useDispatch();
-  const {userRemove,countDecrement} = bindActionCreators(actionCreators, dispatch);
+  const {userRemove} = bindActionCreators(actionCreators, dispatch);
 
   const users = useSelector(state => state.table)
   const uids = Object.keys(users)
@@ -14,12 +14,11 @@ function Home() {
 
   function UserDelete(key,cc){
     userRemove(key,cc)
-    countDecrement(cc)
   }
 
   return (
-    <div style={{alignContent:"center"}}>
-    <table  border="1" >
+    <div style={{alignContent:"center",margin:"0px 354px 0px 0px"}}>
+    <table className='table table-bordered'>
         <thead>
             <tr>
                 <th style={{border:" 1px solid black"}}>Name</th>
@@ -32,7 +31,7 @@ function Home() {
       <tbody>
         {uids.map(key => (
                     
-                  <tr  key={key} className="cart-wrapper">
+                  <tr key={key} className="cart-wrapper">
                       <td style={{border:" 1px solid black"}}>{users[key].name}</td>
                       <td style={{border:" 1px solid black"}}>{users[key].email}</td>
                       <td style={{border:" 1px solid black"}}>{users[key].mobile}</td>
@@ -44,6 +43,19 @@ function Home() {
                   </tr>
                   
                 ))}
+        {Object.keys(users).length === 0 ? (
+          <tr className="cart-wrapper">
+            <td style={{border:" 1px solid black",margin:"10px"}}>Null</td>
+            <td style={{border:" 1px solid black"}}>Null</td>
+            <td style={{border:" 1px solid black"}}>Null</td>
+            <td style={{border:" 1px solid black"}}>Null</td>
+            <td style={{border:" 1px solid black"}}>Null</td>
+          </tr>
+        ) : (
+          <tr className="cart-wrapper disabled">
+            {/* alternative content or leave empty */}
+          </tr>
+        )}
       </tbody>
     </table>
     </div>

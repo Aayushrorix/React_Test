@@ -1,0 +1,21 @@
+[debug] [2024-05-23T13:11:39.833Z] ----------------------------------------------------------------------
+[debug] [2024-05-23T13:11:39.835Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Albiorix Technology\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-05-23T13:11:39.836Z] CLI Version:   13.10.0
+[debug] [2024-05-23T13:11:39.836Z] Platform:      win32
+[debug] [2024-05-23T13:11:39.836Z] Node Version:  v20.12.0
+[debug] [2024-05-23T13:11:39.836Z] Time:          Thu May 23 2024 18:41:39 GMT+0530 (India Standard Time)
+[debug] [2024-05-23T13:11:39.837Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-05-23T13:11:39.843Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-23T13:11:39.844Z] > authorizing via signed-in user (aayushg.rorix@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Albiorix Technology\Desktop\workspace\React_Test
+
