@@ -27,7 +27,7 @@ const Form = ({type}) => {
         const user = {name:name,email:email,mobile:mobile,dob:dob}
 
         userEntry(user,cc)
-        countIncrement(cc)
+        // countIncrement(cc)
 
         navigate('/');
     }

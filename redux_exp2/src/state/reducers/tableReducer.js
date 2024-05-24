@@ -1,12 +1,13 @@
+import {v1 as uuid} from "uuid"; 
 const initialState = {
-    1:{name:"Hiren", email:"hiren@gmail.com", mobile:"9587952756", dob:"2000-11-11"},
-    2:{name:"Raj", email:"raj@gmail.com", mobile:"958982756", dob:"2002-01-05"},
-    3:{name:"Vijay", email:"vijay@gmail.com", mobile:"96657952756", dob:"1998-01-22"},
+    // 1:{name:"Hiren", email:"hiren@gmail.com", mobile:"9587952756", dob:"2000-11-11"},
+    // 2:{name:"Raj", email:"raj@gmail.com", mobile:"958982756", dob:"2002-01-05"},
+    // 3:{name:"Vijay", email:"vijay@gmail.com", mobile:"96657952756", dob:"1998-01-22"},
 }
 
 
 const addUserReducer = (state, action) => {
-    state = {...state,[action.id + 1]:action.payload}
+    state = {...state,[uuid()]:action.payload}
     return state
 }
 
