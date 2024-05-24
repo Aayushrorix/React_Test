@@ -1,5 +1,3 @@
-import { useSelector } from "react-redux";
-
 const initialState = {
     1:{name:"Hiren", email:"hiren@gmail.com", mobile:"9587952756", dob:"2000-11-11"},
     2:{name:"Raj", email:"raj@gmail.com", mobile:"958982756", dob:"2002-01-05"},
