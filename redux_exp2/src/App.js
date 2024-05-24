@@ -1,10 +1,10 @@
 // import logo from './logo.svg';
 import './App.css';
 import Header from './components/header'
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Add from './components/add'
 import Home from './components/home'
-import Edit from './components/edit'
+import Form from './components/form'
 
 function App() {
   return (
@@ -14,8 +14,8 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" Component={Home}/>
-            <Route path="/add" Component={Add } />
-            <Route path="/edit/:userId" element={<Edit />} />
+            <Route path="/add" element={React.createElement(Form, { type: 'add' })} />
+            <Route path="/edit/:userId" element={React.createElement(Form, { type: 'edit' })} />
           </Routes>
         </div>
       </Router>

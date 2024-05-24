@@ -17,8 +17,8 @@ function Home() {
   }
 
   return (
-    <div style={{alignContent:"center",margin:"0px 354px 0px 0px"}}>
-    <table className='table table-bordered'>
+    <div style={{alignContent:"center",margin:"5px 354px 0px 30px"}}>
+    <table className='table table-bordered' style={{borderColor: "black"}}>
         <thead>
             <tr>
                 <th style={{border:" 1px solid black"}}>Name</th>
@@ -29,7 +29,7 @@ function Home() {
             </tr>
         </thead>
       <tbody>
-        {uids.map(key => (
+        {uids.reverse().map(key => (
                     
                   <tr key={key} className="cart-wrapper">
                       <td style={{border:" 1px solid black"}}>{users[key].name}</td>
@@ -37,8 +37,8 @@ function Home() {
                       <td style={{border:" 1px solid black"}}>{users[key].mobile}</td>
                       <td style={{border:" 1px solid black"}}>{users[key].dob}</td>
                       <td style={{border:" 1px solid black"}}>
-                        <button style={{margin:"2px",backgroundColor:"#3464eb", color:"white"}} ><Link to={`/edit/${key}`} style={{ textDecoration:"none",backgroundColor:"#3464eb", color:"white"}}>Edit</Link></button>
-                        <button style={{ margin:"2px",backgroundColor:"#ed1334", color:"white"}} onClick={()=>{UserDelete(key,cc)}}>Delete</button>
+                        <button style={{padding: "2px 30px",border:"none",margin:"2px",marginRight:"20px",backgroundColor:"#3464eb", color:"white"}} ><Link to={`/edit/${key}`} style={{ textDecoration:"none",backgroundColor:"#3464eb", color:"white"}}>Edit</Link></button>
+                        <button style={{padding: "2px 30px",border:"none", margin:"2px",marginLeft:"20px",backgroundColor:"#ed1334", color:"white"}} onClick={()=>{UserDelete(key,cc)}}>Delete</button>
                       </td>
                   </tr>
                   
@@ -53,7 +53,6 @@ function Home() {
           </tr>
         ) : (
           <tr className="cart-wrapper disabled">
-            {/* alternative content or leave empty */}
           </tr>
         )}
       </tbody>
