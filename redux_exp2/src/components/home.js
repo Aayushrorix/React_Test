@@ -37,8 +37,8 @@ function Home() {
                       <td style={{border:" 1px solid black",padding:"5px 20px"}}>{users[key].mobile}</td>
                       <td style={{border:" 1px solid black",padding:"5px 20px"}}>{users[key].dob}</td>
                       <td style={{border:" 1px solid black",padding:"5px 20px"}}>
-                        <button style={{border:"none",margin:"2px",marginRight:"10px",backgroundColor:"#3464eb", color:"white"}} ><Link to={`/edit/${key}`} style={{ padding: "0px 3px",textDecoration:"none",backgroundColor:"#3464eb", color:"white"}}>Edit</Link></button>
-                        <button style={{border:"none", margin:"2px",marginLeft:"10px",backgroundColor:"#ed1334", color:"white"}} onClick={()=>{UserDelete(key,cc)}}>Delete</button>
+                        <button style={{border:"none",borderRadius:"15px",margin:"2px",marginRight:"10px",backgroundColor:"#3464eb", color:"white"}} ><Link to={`/edit/${key}`} style={{ padding: "0px 3px",textDecoration:"none",backgroundColor:"#3464eb", color:"white"}}>Edit</Link></button>
+                        <button style={{border:"none",borderRadius:"15px", margin:"2px",marginLeft:"10px",backgroundColor:"#ed1334", color:"white"}} onClick={()=>{UserDelete(key,cc)}}>Delete</button>
                       </td>
                   </tr>
                   

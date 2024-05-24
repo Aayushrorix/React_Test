@@ -37,53 +37,53 @@ const Form = ({type}) => {
     }
 
     return (
-        <div style={{margin:"0% 25%"}}>
+        <div style={{margin:"5% 25%"}}>
             
 
         
-        <form style={{border:"1px solid black",backgroundColor:"lightblue"}}>
+        <form style={{border:"1px solid black",borderRadius:"20px",backgroundColor:"#2a5e5a"}}>
             {type === "add" ? (
-            <h1 style={{margin:"15px"}}>Add</h1>
+            <h1 style={{margin:"15px",color:"white",textAlign:"center"}}>Add</h1>
             ) : (
-                <h1 style={{margin:"15px"}}>Edit</h1>
+                <h1 style={{margin:"15px",color:"white",textAlign:"center"}}>Edit</h1>
             )}
 
             {/* <hr/> */}
-            <div  style={{margin:"20px 100px"}}>
-                <label  style={{float:"left",marginBottom:"3px"}}>Name : </label><span style={{color:"red",float:"left"}}>*</span>
-                <input type="text" className="form-control" placeholder='Your Name' value={name} onChange={(e) => setName(e.target.value)}/>
+            <div  style={{margin:"20px 10%",textAlign:"center"}}>
+                <label  style={{width:"60px",margin:"0px 0px 3px 0px",color:"white"}}>Name  </label><span style={{color:"red"}}>*</span>
+                <input style={{borderRadius: "20px",width:"80%", height:"38px"}}  type="text"  placeholder='Your Name' value={name} onChange={(e) => setName(e.target.value)}/>
             </div>
 
-            <div  style={{margin:"20px 100px",marginBottom:"8px"}}>
-                <label style={{float:"left"}}>Email : </label><span style={{color:"red",float:"left"}}>*</span>
-                <input type="email" className="form-control" placeholder='exp@gmail.com' value={email} onChange={(e) => setEmail(e.target.value)}/>
+            <div  style={{margin:"20px 10%",textAlign:"center",color:"white"}}>
+                <label style={{width:"60px",margin:"0px 0px 3px 0px"}}>Email  </label><span style={{color:"red"}}>*</span>
+                <input style={{borderRadius: "20px",width:"80%", height:"38px"}} type="email"  placeholder='exp@gmail.com' value={email} onChange={(e) => setEmail(e.target.value)}/>
             </div>
 
-            <div  style={{margin:"20px 100px",marginBottom:"8px"}}>
-                <label style={{float:"left"}}>Mobile : </label><span style={{color:"red",float:"left"}}>*</span>
-                <input type="number"  maxLength={10} className="form-control" placeholder="1234567890" value={mobile} onChange={(e) => {
+            <div  style={{margin:"20px 10%",textAlign:"center",color:"white"}}>
+                <label style={{width:"60px",margin:"0px 0px 3px 0px"}}>Mobile  </label><span style={{color:"red"}}>*</span>
+                <input style={{borderRadius: "20px",width:"80%", height:"38px"}} type="number"  maxLength={10}  placeholder="1234567890" value={mobile} onChange={(e) => {
                     if (/^\d{0,10}$/.test( e.target.value)) {
                         setMobile(e.target.value);
                     }
                 }}/>
             </div>
 
-            <div  style={{margin:"20px 100px",marginBottom:"8px"}}>
-                <label style={{float:"left"}}>DOB : </label><span style={{color:"red",float:"left"}}>*</span>
-                <input type="date" className="form-control" value={dob} onChange={(e) => setDob(e.target.value)}/>
+            <div  style={{margin:"20px 10%",textAlign:"center",color:"white"}}>
+                <label style={{width:"60px",margin:"0px 0px 3px 0px"}}>DOB  </label><span style={{color:"red"}}>*</span>
+                <input style={{borderRadius: "20px",width:"80%", height:"38px"}} type="date" value={dob} onChange={(e) => setDob(e.target.value)}/>
             </div>
 
             {/* <hr/> */}
 
             {type === "add" ? (
-                <div style={{margin:"30px"}}>
-                    <button style={{margin:"2px",padding: "2px 35px",border:"none",backgroundColor:"#3464eb", color:"white"}} disabled={name==="" || email==="" || mobile==="" || dob===""} onClick={addUser}> Add </button>
-                    <button style={{margin:"2px",padding: "2px",border:"none",backgroundColor:"#c3c4c0"}} ><Link  style={{ padding: "0px 30px",textDecoration:"none",color:"black"}} to='/'>Cancle</Link></button>
+                <div style={{margin:"30px",textAlign:"center"}}>
+                    <button style={{margin:"2px",padding: "2px 35px",borderRadius:"10px",border:"none",backgroundColor:"#3464eb", color:"white"}} disabled={name==="" || email==="" || mobile==="" || dob===""} onClick={addUser}> Add </button>
+                    <button style={{margin:"2px",padding: "2px",borderRadius:"10px",border:"2px soloid white",backgroundColor:"black"}} ><Link  style={{ padding: "0px 30px",textDecoration:"none",color:"white"}} to='/'>Cancle</Link></button>
                 </div>
                 ) : (
-                <div style={{margin:"30px"}}>
-                    <button style={{ margin:"2px",padding:"3px",border:"none",backgroundColor:"#3464eb", color:"white"}} disabled={name==="" || email==="" || mobile==="" || dob===""} onClick={()=>{EditUser(userId,name, email, mobile, dob)}}> <Link style={{ padding: "0px 30px",textDecoration:"none",backgroundColor:"#3464eb", color:"white"}} to='/'>Save</Link> </button>
-                    <button style={{ margin:"2px",padding:"3px",border:"none",backgroundColor:"#c3c4c0"}} ><Link style={{padding: "0px 30px", textDecoration:"none",color:"black"}} to='/'>Cancle</Link></button>
+                <div style={{margin:"30px",textAlign:"center"}}>
+                    <button style={{ margin:"2px",padding:"3px",borderRadius:"10px",border:"none",backgroundColor:"#3464eb", color:"white"}} disabled={name==="" || email==="" || mobile==="" || dob===""} onClick={()=>{EditUser(userId,name, email, mobile, dob)}}> <Link style={{ padding: "0px 30px",textDecoration:"none",backgroundColor:"#3464eb", color:"white"}} to='/'>Save</Link> </button>
+                    <button style={{ margin:"2px",padding:"3px",borderRadius:"10px",border:"2px soloid white",backgroundColor:"black"}} ><Link style={{padding: "0px 30px", textDecoration:"none",color:"white"}} to='/'>Cancle</Link></button>
                 </div>
                 )}
         </form>
