@@ -19,7 +19,7 @@ function Home() {
   return (
     <div style={{alignContent:"center",margin:"5px 800px 0px 30px"}}>
     <table  style={{borderColor: "black"}}>
-        <thead>
+        <thead style={{backgroundColor:"lightgreen"}}>
             <tr>
                 <th style={{border:" 1px solid black",padding:"15px"}}>Name</th>
                 <th style={{border:" 1px solid black",padding:"15px"}}>Email</th>
@@ -28,7 +28,7 @@ function Home() {
                 <th style={{border:" 1px solid black",padding:"15px"}}>action</th>
             </tr>
         </thead>
-      <tbody>
+      <tbody style={{backgroundColor:"lightblue"}}>
         {uids.reverse().map(key => (
                     
                   <tr key={key}>

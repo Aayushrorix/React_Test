@@ -41,7 +41,7 @@ const Form = ({type}) => {
             
 
         
-        <form style={{border:"1px solid black"}}>
+        <form style={{border:"1px solid black",backgroundColor:"lightblue"}}>
             {type === "add" ? (
             <h1 style={{margin:"15px"}}>Add</h1>
             ) : (
