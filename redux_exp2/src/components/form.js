@@ -62,13 +62,13 @@ const Form = ({type}) => {
 
             {type === "add" ? (
                 <>
-                    <button style={{padding: "2px 30px",margin:"2px",border:"none",backgroundColor:"#3464eb", color:"white"}} disabled={name==="" || email==="" || mobile==="" || dob===""} onClick={addUser}> Add </button>
-                    <button style={{padding: "2px 30px",margin:"2px",border:"none",backgroundColor:"#c3c4c0"}} ><Link  style={{ textDecoration:"none",color:"black"}} to='/'>Cancle</Link></button>
+                    <button style={{margin:"2px",padding: "0px 30px",border:"none",backgroundColor:"#3464eb", color:"white"}} disabled={name==="" || email==="" || mobile==="" || dob===""} onClick={addUser}> Add </button>
+                    <button style={{margin:"2px",border:"none",backgroundColor:"#c3c4c0"}} ><Link  style={{ padding: "0px 30px",textDecoration:"none",color:"black"}} to='/'>Cancle</Link></button>
                 </>
                 ) : (
                 <>
-                    <button style={{padding: "2px 30px", margin:"2px",border:"none",backgroundColor:"#3464eb", color:"white"}} disabled={name==="" || email==="" || mobile==="" || dob===""} onClick={()=>{EditUser(userId,name, email, mobile, dob)}}> <Link style={{ textDecoration:"none",backgroundColor:"#3464eb", color:"white"}} to='/'>Save</Link> </button>
-                    <button style={{padding: "2px 30px", margin:"2px",border:"none",backgroundColor:"#c3c4c0"}} ><Link style={{ textDecoration:"none",color:"black"}} to='/'>Cancle</Link></button>
+                    <button style={{ margin:"2px",border:"none",backgroundColor:"#3464eb", color:"white"}} disabled={name==="" || email==="" || mobile==="" || dob===""} onClick={()=>{EditUser(userId,name, email, mobile, dob)}}> <Link style={{ padding: "0px 30px",textDecoration:"none",backgroundColor:"#3464eb", color:"white"}} to='/'>Save</Link> </button>
+                    <button style={{ margin:"2px",border:"none",backgroundColor:"#c3c4c0"}} ><Link style={{padding: "0px 30px", textDecoration:"none",color:"black"}} to='/'>Cancle</Link></button>
                 </>
                 )}
         </>
