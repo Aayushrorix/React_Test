@@ -37,7 +37,7 @@ const Form = ({type}) => {
     }
 
     return (
-        <div style={{margin:"00px 350px"}}>
+        <div style={{margin:"0% 25%"}}>
             
 
         
