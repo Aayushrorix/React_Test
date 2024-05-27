@@ -1,0 +1,22 @@
+nav{
+    padding:5px 0px 50px 0px;
+    display: block;
+    background-color:lightcyan
+}
+
+.home-link{
+    background-color:#7abd28;
+    color:white;
+    padding:5px;
+    float:left;
+    margin-left:15px;
+    text-decoration:none;
+}
+
+.add-link{
+    background-color:#3464eb;
+    color:white;
+    padding:5px;
+    float:right;
+    text-decoration:none;
+}

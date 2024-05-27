@@ -1,0 +1,57 @@
+th{
+    border:1px solid black;
+    padding:15px
+}
+
+td{
+    border:1px solid black;
+    padding:5px 20px
+}
+
+.btn-edit{
+    border:none;
+    border-radius:15px;
+    margin:2px;
+    margin-right:10px;
+    background-color:#3464eb;
+    color:white
+}
+
+.link-edit{
+    padding: 0px 3px;
+    text-decoration:none;
+    background-color:#3464eb;
+    color:white
+}
+
+.btn-delete{
+    border:none;
+    border-radius:15px;
+    margin:2px;
+    margin-right:10px;
+    background-color:#ed1334;
+    color:white
+}
+
+.nodata-td{
+    border:1px solid black;
+    margin:10px;
+    padding:5px 230px
+}
+
+table{
+    border-color: black;
+    margin:5% auto
+}
+
+.div-table{
+    align-content:center
+}
+
+thead{
+    background-color:#3de0b5
+}
+
+tbody{
+    background-color:#3dc9db
+}
