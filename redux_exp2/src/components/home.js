@@ -10,16 +10,15 @@ function Home() {
 
   const users = useSelector(state => state.table)
   const uids = Object.keys(users)
-  const cc = useSelector(state => state.currentCount)
 
-  function UserDelete(key,cc){
-    userRemove(key,cc)
+  function UserDelete(key){
+    userRemove(key)
   }
 
   return (
-    <div style={{alignContent:"center",margin:"5px 800px 0px 30px"}}>
-    <table  style={{borderColor: "black"}}>
-        <thead style={{backgroundColor:"lightgreen"}}>
+    <div style={{alignContent:"center"}}>
+    <table  style={{borderColor: "black",margin:"5% auto"}}>
+        <thead style={{backgroundColor:"#3de0b5"}}>
             <tr>
                 <th style={{border:" 1px solid black",padding:"15px"}}>Name</th>
                 <th style={{border:" 1px solid black",padding:"15px"}}>Email</th>
@@ -28,7 +27,7 @@ function Home() {
                 <th style={{border:" 1px solid black",padding:"15px"}}>action</th>
             </tr>
         </thead>
-      <tbody style={{backgroundColor:"lightblue"}}>
+      <tbody style={{backgroundColor:"#3dc9db"}}>
         {uids.reverse().map(key => (
                     
                   <tr key={key}>
@@ -38,7 +37,7 @@ function Home() {
                       <td style={{border:" 1px solid black",padding:"5px 20px"}}>{users[key].dob}</td>
                       <td style={{border:" 1px solid black",padding:"5px 20px"}}>
                         <button style={{border:"none",borderRadius:"15px",margin:"2px",marginRight:"10px",backgroundColor:"#3464eb", color:"white"}} ><Link to={`/edit/${key}`} style={{ padding: "0px 3px",textDecoration:"none",backgroundColor:"#3464eb", color:"white"}}>Edit</Link></button>
-                        <button style={{border:"none",borderRadius:"15px", margin:"2px",marginLeft:"10px",backgroundColor:"#ed1334", color:"white"}} onClick={()=>{UserDelete(key,cc)}}>Delete</button>
+                        <button style={{border:"none",borderRadius:"15px", margin:"2px",marginLeft:"10px",backgroundColor:"#ed1334", color:"white"}} onClick={()=>{UserDelete(key)}}>Delete</button>
                       </td>
                   </tr>
                   

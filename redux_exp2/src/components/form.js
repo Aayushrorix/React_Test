@@ -12,7 +12,7 @@ const Form = ({type}) => {
     const user = users[userId];
 
     const dispatch = useDispatch();
-    const {userEntry,countIncrement,userEdit} = bindActionCreators(actionCreators, dispatch);
+    const {userEntry,userEdit} = bindActionCreators(actionCreators, dispatch);
 
     const [name,setName] = useState(user?user.name:'')
     const [email,setEmail] = useState(user?user.email:'')
@@ -20,14 +20,11 @@ const Form = ({type}) => {
     const [dob, setDob] = useState(user?user.dob:'')
 
     const navigate = useNavigate();
-    
-    const cc = useSelector(state => state.currentCount)
 
     function addUser(){
         const user = {name:name,email:email,mobile:mobile,dob:dob}
 
-        userEntry(user,cc)
-        // countIncrement(cc)
+        userEntry(user)
 
         navigate('/');
     }

@@ -1,9 +1,8 @@
-export const userEntry = (user,id) => {
+export const userEntry = (user) => {
     return (dispatch)=>{
         dispatch({
             type:"add",
-            payload:user,
-            id:id
+            payload:user
         })
     };
 }
@@ -27,11 +26,3 @@ export const userRemove = (uid) => {
     };
 }
 
-export const countIncrement = (cc) => {
-    return (dispatch)=>{
-        dispatch({
-            type:"ccincr",
-            payload:cc
-        })
-    };
-}
