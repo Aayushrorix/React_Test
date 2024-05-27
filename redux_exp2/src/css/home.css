@@ -48,6 +48,7 @@ table{
 .div-table{
     align-content:center;
     width: auto;
+    overflow: auto;
 }
 
 thead{
