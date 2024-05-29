@@ -5,11 +5,11 @@ import Todos from './components/Todos';
 
 function App() {
   return (
-    <>
+    <div style={{textAlign:"center"}}>
     <h1>Learn abount redux toolkit</h1>
     <AddTodo/>
     <Todos/>
-    </>
+    </div>
   );
 }
 

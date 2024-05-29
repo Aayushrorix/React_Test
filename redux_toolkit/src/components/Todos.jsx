@@ -8,15 +8,23 @@ function Todos() {
     const dispatch = useDispatch()
   return (
     <div>
-      <div>Todos</div>
-      <ol>
+      <h1 >Todos</h1>
+      <hr color='red'/>
+      <table style={{border:"1px solid",margin:'auto'}}>
+        <thead></thead>
+        <tbody>
       {todos.map( (todo) => (
-        <li key={todo.id}>
+        <tr>
+        <td key={todo.id} style={{border:"1px solid"}}>
             {todo.text}
-            <button onClick={ () => dispatch(removeTodo(todo.id))}>X</button>
-        </li>
+        </td>
+        <td style={{border:"1px solid"}}>
+        <button onClick={ () => dispatch(removeTodo(todo.id))}>X</button>
+        </td>
+        </tr>
       )) }
-      </ol>
+      </tbody>
+      </table>
     </div>
   )
 }
