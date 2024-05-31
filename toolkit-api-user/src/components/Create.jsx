@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { createUser } from '../features/userDetailSlice';
+import { useNavigate } from 'react-router-dom';
+import Read from './Read';
 
 function Create() {
     const [users, setUsers] = useState({});
 
     const dispatch = useDispatch();
+    const navigate = useNavigate()
 
     const getUserData = (e) => {
         setUsers({...users, [e.target.name]: e.target.value})
@@ -18,6 +21,8 @@ function Create() {
             users['gender'] = 'female'
         }
         dispatch(createUser(users))
+
+        navigate('/read')
     }
 
   return (
