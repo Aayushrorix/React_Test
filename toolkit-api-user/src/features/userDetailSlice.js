@@ -35,6 +35,22 @@ export const showUser = createAsyncThunk("showUser", async(_, {rejectWithValue})
     }
 })
 
+// create action
+export const deleteUser = createAsyncThunk("deleteUser", async(data, {rejectWithValue}) => {
+
+    const response = await fetch(`https://6656ba529f970b3b36c64b09.mockapi.io/crud/${data}`, {
+        method: "DELETE"
+    });
+
+    try {
+        const result = await response.json()
+        console.log(result)
+        return result
+    } catch (error){
+        return rejectWithValue(error)
+    }
+})
+
 const userDetails = createSlice({
     name: "userDetail",
     initialState: {
@@ -63,6 +79,17 @@ const userDetails = createSlice({
             state.users = action.payload
         })
         .addCase(showUser.rejected, (state,action) => {
+            state.loading = false;
+            state.users= action.payload
+        })
+        .addCase(deleteUser.pending, (state,action) => {
+            state.loading = true;
+        })
+        .addCase(deleteUser.fulfilled, (state,action) => {
+            state.loading = false;
+            state.users = state.users.map((u)=>(u.id!==action.payload))
+        })
+        .addCase(deleteUser.rejected, (state,action) => {
             state.loading = false;
             state.users= action.payload
         })
