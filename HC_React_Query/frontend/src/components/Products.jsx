@@ -82,11 +82,11 @@ function Products() {
         <>
           {products.map((p)=>(
            
-            <div key={p.id} style={{border:'1px solid black',margin:'10px auto',maxWidth:'300px',fontFamily:'arial'}}>
-              <img src={p.image} alt='image' style={{boxShadow:'0 4px 8px 0 rgba(0, 0, 0, 0.2)',width:'100%'}}></img>
-              <h3 style={{textAlign:'center'}}>{p.name}</h3>
-              <p style={{textAlign:'center',color:'gray',fontSize:'22px'}}>${p.price}</p>
-          </div>
+            <span key={p.id} style={{border:'1px solid black',display:'inline-block',margin:'40px',maxWidth:'300px',fontFamily:'arial'}}>
+              <img src={p.image} alt='image' style={{boxShadow:'0 4px 8px 0 rgba(0, 0, 0, 0.2)',height:'300px',width:'300px'}}></img>
+              <br/><b style={{textAlign:'center'}}>{p.name}</b>
+              <br/><b style={{textAlign:'center',color:'gray',fontSize:'22px'}}>${p.price}</b>
+          </span>
             
            
           ))}
