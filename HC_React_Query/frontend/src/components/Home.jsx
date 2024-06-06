@@ -5,11 +5,11 @@ function Home() {
   return (
     <div>
       <nav>
-        <ul>
-          <li>
+        <ul style={{display: 'flex', listStyleType: 'none',padding: '0px'}}>
+          <li style={{marginRight: '15px'}}>
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li style={{marginRight: '15px'}}>
             <Link to="/products">Products</Link>
           </li>
         </ul>

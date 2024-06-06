@@ -60,19 +60,20 @@ function Products() {
   
     return (
       <div>
-        <div>
-        <ul>
-          <li>
+        <nav>
+        <ul style={{display: 'flex', listStyleType: 'none',padding: '0px'}}>
+          <li style={{marginRight: '15px'}}>
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li style={{marginRight: '15px'}}>
             <Link to="/products">Products</Link>
           </li>
         </ul>
-      </div>
+      </nav>
         <h1>Chai aur API in react</h1>
-        <input type='text' placeholder='Search' value={search} onChange={(e)=> setSearch(e.target.value)}/>
+        <input type='text' style={{float:'left'}} placeholder='Search' value={search} onChange={(e)=> setSearch(e.target.value)}/>
         {/* <h2>Number of Products are: {products.length}</h2> */}
+        <div>===========================================================================================================================================</div>
   
         {loading && (<h1>Loading...</h1>)}
         {/* <div style={{display: loading ? 'none' : 'block'}}> */}
@@ -80,20 +81,19 @@ function Products() {
 
         <>
           {products.map((p)=>(
-            <div key={p.id} style={{width:"auto",margin:"12px",border:"1px solid"}}>
-              <div style={{float:"left",marginTop: "28px",marginLeft:"95px"}}>
-                <span>Product : {p.name} </span><br/>
-                {/* <span> {p.age} </span><br/> */}
-                <span>Price : {p.price} </span>
-              </div>
-              {/* <span> {p.image} </span> */}
-              <img src={p.image} alt='image' style={{width:"100px",height:"100px"}}></img>
-            </div>
+           
+            <div key={p.id} style={{border:'1px solid black',margin:'10px auto',maxWidth:'300px',fontFamily:'arial'}}>
+              <img src={p.image} alt='image' style={{boxShadow:'0 4px 8px 0 rgba(0, 0, 0, 0.2)',width:'100%'}}></img>
+              <h3 style={{textAlign:'center'}}>{p.name}</h3>
+              <p style={{textAlign:'center',color:'gray',fontSize:'22px'}}>${p.price}</p>
+          </div>
+            
+           
           ))}
           </>
         )}
         {/* </div> */}
-        <div>=================================================================</div>
+        <div>===========================================================================================================================================</div>
       </div>
     );
 }
