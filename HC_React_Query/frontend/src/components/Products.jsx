@@ -75,9 +75,11 @@ function Products() {
         </ul>
       </nav>
         <h1>Chai aur API in react</h1>
-        <input type='text' style={{float:'left'}} placeholder='Search' value={search} onChange={(e)=> setSearch(e.target.value)}/>
+        <div style={{marginBottom:"60px"}}>
+          <input type='text' style={{float:'left'}} placeholder='Search' value={search} onChange={(e)=> setSearch(e.target.value)}/>
+        </div>
         {/* <h2>Number of Products are: {products.length}</h2> */}
-        <div>===========================================================================================================================================</div>
+        <div style={{borderBottom:'1px solid'}}> </div>
   
         {loading && (<h1>Loading...</h1>)}
         {/* <div style={{display: loading ? 'none' : 'block'}}> */}
@@ -88,8 +90,8 @@ function Products() {
            
             <span key={p.id} style={{border:'1px solid black',textAlign:'center',display:'inline-block',margin:'40px',maxWidth:'300px',fontFamily:'arial'}}>
               <img src={p.image} alt='image' onError={handleImageError} style={{boxShadow:'0 4px 8px 0 rgba(0, 0, 0, 0.2)',height:'300px',width:'300px'}}></img>
-              <br/><b>{p.name}</b>
-              <hr/>
+              <br/><b style={{}}>{p.name}</b>
+              <br/><div style={{borderBottom:"1px solid",display:'block'}}></div>
               <br/><b style={{color:'gray',fontSize:'22px'}}>${p.price}</b>
           </span>
             
@@ -98,7 +100,7 @@ function Products() {
           </>
         )}
         {/* </div> */}
-        <div>===========================================================================================================================================</div>
+        <hr/>
       </div>
     );
 }
