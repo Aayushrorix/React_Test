@@ -57,6 +57,10 @@ function Products() {
     if(loading){
       return <h1>Loading...</h1>
     }
+
+    const handleImageError = (e) => {
+      e.target.src = 'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png';
+    };
   
     return (
       <div>
@@ -83,7 +87,7 @@ function Products() {
           {products.map((p)=>(
            
             <span key={p.id} style={{border:'1px solid black',textAlign:'center',display:'inline-block',margin:'40px',maxWidth:'300px',fontFamily:'arial'}}>
-              <img src={p.image} alt='image' style={{boxShadow:'0 4px 8px 0 rgba(0, 0, 0, 0.2)',height:'300px',width:'300px'}}></img>
+              <img src={p.image} alt='image' onError={handleImageError} style={{boxShadow:'0 4px 8px 0 rgba(0, 0, 0, 0.2)',height:'300px',width:'300px'}}></img>
               <br/><b>{p.name}</b>
               <hr/>
               <br/><b style={{color:'gray',fontSize:'22px'}}>${p.price}</b>
