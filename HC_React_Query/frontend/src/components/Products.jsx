@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query'
 import { useDebounce } from './hooks';
+import './products.css'
 
 const fetchProducts = async (search) => {
   // const response = await fetch('/api/products?search='+search)
@@ -64,42 +65,43 @@ function Products() {
   
     return (
       <div>
-        <nav>
-        <ul style={{display: 'flex', listStyleType: 'none',padding: '0px'}}>
-          <li style={{marginRight: '15px'}}>
-            <Link to="/">Home</Link>
-          </li>
-          <li style={{marginRight: '15px'}}>
-            <Link to="/products">Products</Link>
-          </li>
-        </ul>
-      </nav>
-        <h1>Chai aur API in react</h1>
-        <div style={{marginBottom:"60px"}}>
-          <input type='text' style={{float:'left'}} placeholder='Search' value={search} onChange={(e)=> setSearch(e.target.value)}/>
+        <div className='header grid-container'>
+          <nav className='grid-item'>
+            <ul className='head-ul'>
+              <li className='head-li'>
+                <Link to="/">Home</Link>
+              </li>
+              <li className='head-li'>
+                <Link to="/products">Products</Link>
+              </li>
+            </ul>
+          </nav>
+
+          <h1 className='heading grid-item'>Chai aur API in react</h1>
+          <div className='search-container'>
+            <input type='text' className='search' placeholder='Search' value={search} onChange={(e)=> setSearch(e.target.value)}/>
+          </div>
         </div>
         {/* <h2>Number of Products are: {products.length}</h2> */}
-        <div style={{borderBottom:'1px solid'}}> </div>
+        {/* <div style={{borderBottom:'1px solid'}}> </div> */}
+        <hr/>
   
         {loading && (<h1>Loading...</h1>)}
         {/* <div style={{display: loading ? 'none' : 'block'}}> */}
         {products && (
 
-        <>
-          {products.map((p)=>(
-           
-            <span key={p.id} style={{border:'1px solid black',textAlign:'center',display:'inline-block',margin:'40px',maxWidth:'300px',fontFamily:'arial'}}>
-              <img src={p.image} alt='image' onError={handleImageError} style={{boxShadow:'0 4px 8px 0 rgba(0, 0, 0, 0.2)',height:'300px',width:'300px'}}></img>
-              <br/><b style={{}}>{p.name}</b>
-              <br/><div style={{borderBottom:"1px solid",display:'block'}}></div>
-              <br/><b style={{color:'gray',fontSize:'22px'}}>${p.price}</b>
-          </span>
+          <div className='container-div grid-container'>
+            {products.map((p)=>(
             
-           
-          ))}
-          </>
+              <div key={p.id} className='product-card grid-item'>
+                <img src={p.image} alt='image' onError={handleImageError} ></img>
+                <br/><p className='pname'>{p.name}</p>
+                <hr className='hrtag'/>
+                <b className='price'>${p.price}</b>
+              </div>
+            ))}
+          </div>
         )}
-        {/* </div> */}
         <hr/>
       </div>
     );

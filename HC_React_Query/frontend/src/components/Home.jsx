@@ -1,15 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './products.css'
 
 function Home() {
   return (
-    <div>
-      <nav>
-        <ul style={{display: 'flex', listStyleType: 'none',padding: '0px'}}>
-          <li style={{marginRight: '15px'}}>
+    <div className='header grid-container'>
+      <nav className='grid-item'>
+        <ul className='head-ul'>
+          <li className='head-li'>
             <Link to="/">Home</Link>
           </li>
-          <li style={{marginRight: '15px'}}>
+          <li className='head-li'>
             <Link to="/products">Products</Link>
           </li>
         </ul>

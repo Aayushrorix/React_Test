@@ -33,6 +33,114 @@ app.get('/api/products', (req, res) => {
             name: 'table polyester',
             price: 150,
             image: "https://www.cvlinens.com/cdn/shop/products/Polyester-Table-Runner-Gold.jpg?v=1615240729&width=500"
+        },
+        {
+          id: 6,
+          name: "name 6",
+          price: 11,
+          image: "image 6"
+        },
+        {
+          id: 7,
+          name: "name 7",
+          price: 54,
+          image: "image 7",
+        },
+        {
+          id: 8,
+          name: "name 8",
+          price: 38,
+          image: "image 8",
+        },
+        {
+          id: 9,
+          name: "name 9",
+          price: 62,
+          image: "image 9",
+        },
+        {
+          id: 10,
+          name: "name 10",
+          price: 8,
+          image: "image 10",
+        },
+        {
+          id: 11,
+          name: "name 11",
+          price: 22,
+          image: "image 11",
+        },
+        {
+          id: 12,
+          name: "name 12",
+          price: 80,
+          image: "image 12",
+        },
+        {
+          id: 13,
+          name: "name 13",
+          price: 48,
+          image: "image 13",
+        },
+        {
+          id: 14,
+          name: "name 14",
+          price: 95,
+          image: "image 14",
+        },
+        {
+          id: 15,
+          name: "name 15",
+          price: 17,
+          image: "image 15",
+        },
+        {
+          id: 16,
+          name: "name 16",
+          price: 20,
+          image: "image 16",
+        },
+        {
+          id: 17,
+          name: "name 17",
+          price: 16,
+          image: "image 17",
+        },
+        {
+          id: 18,
+          name: "name 18",
+          price: 1,
+          image: "image 18",
+        },
+        {
+          id: 19,
+          name: "name 19",
+          price: 15,
+          image: "image 19",
+        },
+        {
+          id: 20,
+          name: "name 20",
+          price: 82,
+          image: "image 20",
+        },
+        {
+          id: 21,
+          name: "name 21",
+          price: 83,
+          image: "image 21",
+        },
+        {
+          id: 22,
+          name: "name 22",
+          price: 67,
+          image: "image 22",
+        },
+        {
+          id:23,
+          name: "name 23",
+          price: 91,
+          image: "image 23",
         }
     ]
 
