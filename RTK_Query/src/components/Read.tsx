@@ -25,8 +25,8 @@ function Read() {
               <div className='card-body'>
                 <h5 className='card-title'>{student?.studentName}</h5>
                 <h6 className='card-subtitle mb-2 text-muted'>{student?.studentEmail}</h6>
-                <button className='btn btn-link p-0' onClick={() => deleteStudent(student?.id)}>Delete</button>
-                <Link to={`/edit/${student?.id}`} className='btn btn-link p-0'>Edit</Link>
+                <button className='m-2 p-0' onClick={() => deleteStudent(student?.id)}>Delete</button>
+                <Link to={`/edit/${student?.id}`} className='m-2 p-0'><button>Edit</button></Link>
               </div>
             </div>
           </div>
