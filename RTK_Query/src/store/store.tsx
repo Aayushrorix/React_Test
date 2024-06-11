@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { studentApi } from "../slices/studentSlice";
+import { studentApi } from "../slices/studentSlice.tsx";
 
 export const store = configureStore({
     reducer: {
@@ -8,3 +8,8 @@ export const store = configureStore({
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(studentApi.middleware),
 });
+
+export type RootState = ReturnType<typeof store.getState>;
+
+export type AppDispatch = typeof store.dispatch;
+

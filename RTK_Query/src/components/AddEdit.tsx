@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Student } from '../models/studentModel'
-import { useAddStudentMutation, useGetStudentsQuery, useUpdateStudentMutation } from '../slices/studentSlice';
+import { useAddStudentMutation, useUpdateStudentMutation } from '../slices/studentSlice.tsx';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { RootState } from '../store/store.tsx';
 
 function AddEdit() {
   const [students, setStudents] = useState<Student>(Object);
@@ -10,6 +11,15 @@ function AddEdit() {
 
   const {id} = useParams();
   console.log("id---->",id)
+
+  interface QueryState {
+    data?: Student[];
+    // other properties depending on your RTK Query setup
+  }
+  
+  // interface APIState {
+  //   queries: Record<string, QueryState>;
+  // }
 
   const [addStudent] = useAddStudentMutation();
   const [editMode, setEditMode] = useState(false);
@@ -20,8 +30,8 @@ function AddEdit() {
   // console.log("========>",allStudents)
   // const currStudent = allStudents.filter((s)=>(s.id == id))[0]
 
-  const allStudents = useSelector(state => {
-    const queries = Object.values(state.api.queries);
+  const allStudents = useSelector((state:RootState) => {
+    const queries = Object.values(state.api.queries) as QueryState[];
     return queries.length > 0 && queries[0].data ? queries[0].data : [];
   });
 

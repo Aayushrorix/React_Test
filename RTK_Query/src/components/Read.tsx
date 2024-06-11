@@ -5,7 +5,7 @@ import { useDeleteStudentMutation, useGetStudentsQuery } from '../slices/student
 
 function Read() {
 
-  const { data, isSuccess, isError, error, isLoading } = useGetStudentsQuery();
+  const { data, isSuccess, isError, isLoading } = useGetStudentsQuery();
 
   const [deleteStudent] = useDeleteStudentMutation();
 
@@ -17,7 +17,7 @@ function Read() {
       <h2>Read Operation</h2>
       <div className='row'>
         {isLoading && <span>Loading...</span>}
-        {isError && <span>Something went wrong --&gt; {error.error}</span>}
+        {isError && <span>Something went wrong </span>}
         {isSuccess &&
           data?.map((student)=>(
           <div key={student?.id} className='col-3'>

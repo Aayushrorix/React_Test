@@ -26,7 +26,7 @@ export const studentApi = createApi({
             }),
             invalidatesTags: ["Student"],
         }),
-        updateStudent: builder.mutation<void, string>({
+        updateStudent: builder.mutation<void, Partial<Student> & Pick<Student, 'id'>>({
             query: ({id,...rest}) => ({
                 url: `/rtk/${id}`,
                 method: 'PUT',
