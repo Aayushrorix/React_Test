@@ -72,7 +72,8 @@ function AddEdit() {
 
   return (
     <div className='container mx-auto'>
-      <h2>Add and Edit Form</h2>
+      {/* <h2>Add and Edit Form</h2> */}
+      <h2>{editMode?"Update Form" : "Create Form"}</h2>
 
       <form onSubmit={handleSubmit}>
         <div className='mb-3'>
@@ -85,7 +86,7 @@ function AddEdit() {
         </div>
 
         <button type='submit' className='btn btn-primary'>
-            Submit
+            {editMode? "Update":"Add"}
         </button>
       </form>
     </div>
