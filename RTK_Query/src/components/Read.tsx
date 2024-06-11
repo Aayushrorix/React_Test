@@ -20,13 +20,13 @@ function Read() {
         {isError && <span>Something went wrong </span>}
         {isSuccess &&
           data?.map((student) => (
-          <div key={student?.id} className='grid-item col-md-4 col-sm-6 mb-4'>
+          <div key={student?.id} className='grid-item col-md-4 col-sm-12 mb-4'>
             <div className='card h-100' style={{border: '1px solid'}}>
               <div className='card-body'>
                 <h5 className='card-title'>{student?.studentName}</h5>
                 <h6 className='card-subtitle mb-2 text-muted'>{student?.studentEmail}</h6>
-                <button className='m-2 p-0' onClick={() => deleteStudent(student?.id)}>Delete</button>
-                <Link to={`/edit/${student?.id}`} className='m-2 p-0'><button>Edit</button></Link>
+                <button className='btn btn-danger' onClick={() => deleteStudent(student?.id)}>Delete</button>
+                <Link to={`/edit/${student?.id}`} className='m-2 p-0'><button className='btn btn-primary'>Edit</button></Link>
               </div>
             </div>
           </div>
