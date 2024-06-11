@@ -64,14 +64,14 @@ function AddEdit() {
     }
   },[])
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit =  (e: React.FormEvent<HTMLFormElement>) => {
 
     e.preventDefault();
     if(!editMode){
-      await addStudent(students);
+      addStudent(students);
     }
     else{
-      await updateStudent(students);
+      updateStudent(students);
     }
     // refetch();
     navigate("/student");
@@ -95,7 +95,7 @@ function AddEdit() {
             <input type='email' name='studentEmail' value={students?.studentEmail || ""} onChange={handleChange} className='form-control'/>
         </div>
 
-        <button type='submit' className='btn btn-primary'>
+        <button type='submit' disabled={!(students?.studentName && students?.studentEmail)} className='btn btn-primary'>
             {editMode? "Update":"Add"}
         </button>
       </form>
