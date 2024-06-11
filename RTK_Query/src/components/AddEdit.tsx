@@ -10,7 +10,7 @@ function AddEdit() {
   const navigate = useNavigate()
 
   const {id} = useParams();
-  console.log("id---->",id)
+  // console.log("id---->",id)
 
   interface QueryState {
     data?: Student[];
@@ -37,7 +37,7 @@ function AddEdit() {
 
   const currStudent = allStudents.find(s => s.id == id);
 
-  console.log("Current ===> ",currStudent)
+  // console.log("Current ===> ",currStudent)
 
   // const [name,setName] = useState(currStudent?currStudent.studentName:"")
   // const [email,setEmail] = useState(currStudent?currStudent.studentEmail:"")
@@ -49,9 +49,9 @@ function AddEdit() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     // [e.target.name] = e.target.value
-    console.log("====> ",e.target.name,"==>",e.target.value)
+    // console.log("====> ",e.target.name,"==>",e.target.value)
     setStudents({...students, [e.target.name]: e.target.value })
-    console.log("students -> ",students)
+    // console.log("students -> ",students)
   };
 
   useEffect(()=>{

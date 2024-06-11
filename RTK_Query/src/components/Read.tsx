@@ -9,7 +9,7 @@ function Read() {
 
   const [deleteStudent] = useDeleteStudentMutation();
 
-  console.log("data ===> ",data)
+  // console.log("data ===> ",data)
   // console.log("error ==> ",error)
 
   return (
