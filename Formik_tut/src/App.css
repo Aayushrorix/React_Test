@@ -1,0 +1,118 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+form {
+  border:1px solid black;
+  border-radius : 20px;
+  background-color : #2a5e5a;
+  width: 500px;
+}
+
+.field{
+  margin:20px 10%;
+  text-align:center;
+  color:white
+}
+
+label{
+  width:60px;
+  margin:0px 0px 3px 0px
+}
+
+input{
+  border-radius: 20px;
+  width:80%;
+  height:38px
+}
+
+.btn-cancel{
+  margin:2px;
+  padding:2px;
+  border-radius:10px;
+  border:px soloid white;
+  background-color:black
+}
+
+.btn-add{
+  margin:2px;
+  padding: 2px 35px;
+  border-radius:10px;
+  border:none;
+  background-color:#3464eb;
+  color:white
+}
+
+.btn-save{
+  margin:2px;
+  padding: 3px;
+  border-radius:10px;
+  border:none;
+  background-color:#3464eb;
+  color:white
+}
+
+.link{
+  padding: 0px 30px;
+  text-decoration:none;
+  color:white
+}
+
+.add-edit-cancel{
+  margin:30px;
+  text-align:center
+}
+
+.from-heading{
+  margin:15px;
+  color:white;
+  text-align:center
+}
+
+.required{
+  color:red
+}
+
+.div-form{
+  /* margin:5% 25% */
+}
+
