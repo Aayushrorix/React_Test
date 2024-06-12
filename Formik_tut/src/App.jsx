@@ -25,12 +25,17 @@ function App() {
       country:Yup.string()
       .required("this is required field")
     }),
-    onSubmit:(values) => {
-      console.log("Form Submitted",values)
+    onSubmit: (values, { resetForm }) => {
+      console.log("Form Submitted", values);
+      // Reset the form after submission
+      resetForm();
+
+      console.log("Form Submitted", values);
+
     }
   })
 
-  // console.log(formik.touched)
+ 
   return (
     <div className='div-form'>
       <form onSubmit={formik.handleSubmit}>
@@ -61,6 +66,7 @@ function App() {
           name='status'
           value="single"
           onChange={formik.handleChange}
+          checked={formik.values.status !== "" && formik.values.status !== "commited" }
           /><br/>
           <label>Commited</label><br/>
           <input
@@ -68,13 +74,14 @@ function App() {
           name='status'
           value="commited"
           onChange={formik.handleChange}
+          checked={formik.values.status !== "" && formik.values.status !== "single" }
           />
           {formik.touched.status && formik.errors.status && <p style={{color:"red"}}>{formik.errors.status}</p>}
         </div>
 
         <div className='field'>
           <label  >Country  </label><span className='required'>*</span>
-          <select name='country' onChange={formik.handleChange} onBlur={formik.handleBlur}>
+          <select name='country' onChange={formik.handleChange} value={formik.values.country}  onBlur={formik.handleBlur}>
             <option value="">Select Country</option>
             <option value="india">India</option>
             <option value="pak">Pakistan</option>
