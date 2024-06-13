@@ -5,10 +5,11 @@ import './App.css'
 import { useForm } from 'react-hook-form'
 
 function App() {
-  const {register, handleSubmit } = useForm();
+  const {register, handleSubmit, reset  } = useForm();
 
   const onSubmit = (data) => {
     console.log(data)
+    reset()
   }
 
   return (
