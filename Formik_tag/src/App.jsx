@@ -72,7 +72,7 @@ function App() {
         {({errors}) => (
           <div>
           <Form className="login-box">
-
+            <h2 className='heading'>SignUp</h2>
             <div className="user-box">
               <label htmlFor='name'>Name</label>
               <br/>
